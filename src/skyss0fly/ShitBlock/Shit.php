@@ -8,6 +8,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
+use pocketmine\world\World;
 use pocketmine\block\VanillaBlocks;
 
 class Shit extends PluginBase {
@@ -27,9 +28,8 @@ class Shit extends PluginBase {
                 $x = $sender->getPosition()->getX();
                 $y = $sender->getPosition()->getY();
                 $z = $sender->getPosition()->getZ();
-
-                $worldManager = $this->getServer()->getWorldManager();
-                $world = $worldManager->getWorld($sender->getWorld());
+$player = $sender->getPlayer()
+                $world = $player->getWorld();
                 $block = $world->getBlockAt($x, $y - 1, $z);
                 $world->setBlock(VanillaBLOCKS::MUD(), $block);
 
